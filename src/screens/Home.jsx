@@ -1,7 +1,14 @@
 import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
+import { useCustomFonts } from '../fonts/fonts'
 import React from 'react'
 
 const Home = () => {
+  const [fontsLoaded]= useCustomFonts();
+
+  if (!fontsLoaded){
+    return null
+  }
+
   return (
     <View style={styles.container}>
         <Text style={styles.welcome}>Selamat Datang Di Teman Ngobrol</Text>
@@ -22,8 +29,9 @@ const styles = StyleSheet.create({
     backgroundColor:"#F0E68C"
   },
   welcome: {
-      fontSize: 24,
-      fontWeight: 'bold',
+      fontFamily: 'Roboto-Variabel',
+      fontWeight:'bold',
+      fontSize: 30,
       marginTop:23,
       marginBottom:175,
   },
@@ -34,6 +42,7 @@ const styles = StyleSheet.create({
     borderRadius:20,
   },
   tombol:{
+    fontFamily:'Roboto-Variabel',
     fontSize:30,
     fontWeight:'medium',
     marginVertical:9,
