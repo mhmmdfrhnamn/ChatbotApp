@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
-import { useCustomFonts } from '../fonts/fonts'
-import Logo from '../../assets/images/icon.svg'
+import { useCustomFonts } from '../src/fonts/fonts'
+import Logo from '../assets/images/icon.svg'
+import { router } from 'expo-router' 
 import React from 'react'
 
 const Home = () => {
@@ -12,11 +13,15 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
+
       <Logo width={138} height={138} style={styles.icon}/>
+
       <Text style={styles.welcome}>  Selamat Datang{'\n'}Di Teman Ngobrol</Text>
-      <TouchableOpacity style={styles.button}>
+
+      <TouchableOpacity style={styles.button} onPress={()=>router.push('/app/Chat.jsx')}>
         <Text style={styles.tombol}>Masuk</Text>
       </TouchableOpacity>
+
     </View>
   )
 }
