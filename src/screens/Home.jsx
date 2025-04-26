@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
 import { useCustomFonts } from '../fonts/fonts'
+import Logo from '../../assets/images/icon.svg'
 import React from 'react'
 
 const Home = () => {
@@ -11,10 +12,11 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-        <Text style={styles.welcome}>Selamat Datang Di Teman Ngobrol</Text>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.tombol}>Masuk</Text>
-        </TouchableOpacity>
+      <Logo width={138} height={138} style={styles.icon}/>
+      <Text style={styles.welcome}>  Selamat Datang{'\n'}Di Teman Ngobrol</Text>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.tombol}>Masuk</Text>
+      </TouchableOpacity>
     </View>
   )
 }
@@ -28,11 +30,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor:"#F0E68C"
   },
+
+  icon:{
+    marginTop:180,
+  },
+
   welcome: {
       fontFamily: 'Roboto-Variabel',
       fontWeight:'bold',
-      fontSize: 30,
-      marginTop:23,
+      fontSize: 40,
+      marginTop:35,
       marginBottom:175,
   },
   button: {
