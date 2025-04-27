@@ -18,7 +18,7 @@ const Home = () => {
 
       <Text style={styles.welcome}>  Selamat Datang{'\n'}Di Teman Ngobrol</Text>
 
-      <TouchableOpacity style={styles.button} onPress={()=>router.push('/app/Chat.jsx')}>
+      <TouchableOpacity style={styles.button} onPress={()=>router.push('/chat')}>
         <Text style={styles.tombol}>Masuk</Text>
       </TouchableOpacity>
 
@@ -41,8 +41,7 @@ const styles = StyleSheet.create({
   },
 
   welcome: {
-      fontFamily: 'Roboto-Variabel',
-      fontWeight:'bold',
+      fontFamily: 'Fira-Bold',
       fontSize: 40,
       marginTop:35,
       marginBottom:175,
@@ -54,9 +53,8 @@ const styles = StyleSheet.create({
     borderRadius:20,
   },
   tombol:{
-    fontFamily:'Roboto-Variabel',
+    fontFamily:'Fira-Medium',
     fontSize:30,
-    fontWeight:'medium',
     marginVertical:9,
     marginHorizontal:33,
 
