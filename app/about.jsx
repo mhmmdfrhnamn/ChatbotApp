@@ -40,7 +40,7 @@ const AboutScreen = () => {
         <Text style={styles.sectionTitle}>Pembuat</Text>
         <Text style={styles.namaPembuat}>Muhammad Farhan Amien</Text>
         <Text style={styles.sectionText}>
-          Seorang pengembang aplikasi mobile yang senang membuat tools sederhana untuk membantu kehidupan sehari-hari.
+        Mahasiswa biasa yang lagi belajar bikin aplikasi mobile sederhana buat tugas UTS. Aplikasi ini cuma prototype sederhana yang dikembangkan dalam waktu singkat. Kalau ada bug atau kurang menarik, mohon maaf yang sebesar besarnya
         </Text>
       </View>
 
@@ -76,7 +76,7 @@ const AboutScreen = () => {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Versi Aplikasi</Text>
         <Text style={styles.sectionText}>Teman Ngobrol v1.0.0</Text>
-        <Text style={styles.sectionText}>© 2023 Muhammad Farhan Amien</Text>
+        <Text style={styles.sectionText}>© 2025 Muhammad Farhan Amien</Text>
       </View>
 
       <TouchableOpacity style={styles.goback} onPress={()=>router.push('/chat')}>
