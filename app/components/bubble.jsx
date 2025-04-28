@@ -1,7 +1,14 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { useCustomFonts } from "../../src/fonts/fonts";
 
 const Bubble = ({message, user}) => {
+
+    const[fontsLoaded]=useCustomFonts()
+    if (!fontsLoaded){
+        return null
+    }
+
     return (
         <View
             style={[
@@ -20,21 +27,26 @@ const styles =StyleSheet.create({
         padding: 15,
         marginVertical: 5,
         maxWidth: '80%',
-        borderRadius: 15,
+        borderRadius: 20,
         marginLeft: 10,
         marginRight: 10,
     },
     pengguna: {
+        marginTop:25,
         alignSelf: 'flex-end',
         backgroundColor: '#f0e68c',
+        borderTopEndRadius:0,
     },
     bot :{
+        marginTop:25,
+        borderBottomStartRadius:0,
         alignSelf: 'flex-start',
-        backgroundColor:'#ececec'
+        backgroundColor:'#deccca'
     },
     text:{
-        fontSize: 16,
-        color: '#000000'
+        fontSize: 19,
+        color: '#000000',
+        fontFamily:'Fira-Regular'
     }
 })
 

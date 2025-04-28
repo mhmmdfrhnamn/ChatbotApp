@@ -7,6 +7,7 @@ export const useCustomFonts = () => {
         'Fira-Bold' : require('../../assets/fonts/FiraSans-Bold.ttf'),
         'Fira-Medium' : require('../../assets/fonts/FiraSans-Medium.ttf'),
         'Fira-Regular' : require('../../assets/fonts/FiraSans-Regular.ttf'),
+        'Fira-Light' : require('../../assets/fonts/FiraSans-Light.ttf'),
 
     })
 }

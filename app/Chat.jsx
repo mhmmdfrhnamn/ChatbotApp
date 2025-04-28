@@ -5,6 +5,7 @@ import { useCustomFonts } from '../src/fonts/fonts'
 import Logo from '../assets/images/icon.svg'
 import Bubble from './components/bubble'
 import { openRouter } from '../services/api'
+import { router } from 'expo-router'
 
 
 const Chat = () => {
@@ -52,8 +53,16 @@ const Chat = () => {
     <View style={styles.container}>
 
       <View style={styles.header}>
+        <View style={{flexDirection:"row", alignItems:"center", marginLeft:70}}>
         <Logo width={49}/>
         <Text style={styles.tittle}>Teman Ngobrol</Text>
+        </View>
+
+        <TouchableOpacity style={styles.info}>
+        <Feather name="info" size={28} color="#F0E68C" style={styles.about}
+        onPress={()=>router.push('/about')}
+        />
+        </TouchableOpacity>
       </View>
 
       <FlatList
@@ -68,7 +77,7 @@ const Chat = () => {
         <TextInput
           value={input}
           onChangeText={setInput}
-          placeholder='Tulis Pesan'
+          placeholder='Tulis Pesan..'
           placeholderTextColor="#000000"
           style={styles.input}
         />
@@ -93,22 +102,27 @@ const styles = StyleSheet.create({
   },
   header:{
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor:'#F0E68C',
     borderRadius: 10,
   },
   tittle:{
     marginLeft: 10,
-    fontSize:30,
+    fontSize:40,
     fontFamily: 'Fira-Bold',
   },
+  info:{
+    marginTop:7,
+    marginRight:30,
+    backgroundColor:'black',
+    borderRadius:50
+  },
   inputContainer: {
-    backgroundColor:'#ffffff',
-    marginBottom:41,
-    marginLeft:41,
-    marginRight:41,
-    borderRadius: 15,
+    backgroundColor:'#ffff',
+    marginVertical:30,
+    marginHorizontal:30,
+    borderRadius: 20,
     flexDirection: 'row',
     padding: 7,
     borderWidth: 2,
@@ -119,6 +133,8 @@ const styles = StyleSheet.create({
     flex:1,
     padding:8,
     marginRight:5,
+    fontSize: 20,
+    fontFamily: 'Fira-Light'
   }
 })
 

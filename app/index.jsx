@@ -22,6 +22,7 @@ const Home = () => {
         <Text style={styles.tombol}>Masuk</Text>
       </TouchableOpacity>
 
+
     </View>
   )
 }
@@ -37,17 +38,18 @@ const styles = StyleSheet.create({
   },
 
   icon:{
-    marginTop:180,
+    marginTop:200,
   },
 
   welcome: {
       fontFamily: 'Fira-Bold',
       fontSize: 40,
       marginTop:35,
-      marginBottom:175,
+      marginBottom:150,
   },
   button: {
     backgroundColor:"white",
+    marginBottom:100,
     maxWidth:157,
     maxHeight:54,
     borderRadius:20,
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
     fontSize:30,
     marginVertical:9,
     marginHorizontal:33,
+  },
+  
 
-
-  }
 })
