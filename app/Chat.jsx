@@ -1,7 +1,10 @@
-import { PermissionsAndroid, StyleSheet, Text, TextInput, View,  } from 'react-native'
+import {  StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native'
+import { Feather } from '@expo/vector-icons'
 import React, {useState,} from 'react'
 import { useCustomFonts } from '../src/fonts/fonts'
 import Logo from '../assets/images/icon.svg'
+import Bubble from './components/bubble'
+import { openRouter } from '../services/api'
 
 
 const Chat = () => {
@@ -43,6 +46,14 @@ const Chat = () => {
           placeholderTextColor="#000000"
           style={styles.input}
         />
+        <TouchableOpacity style={{
+          backgroundColor:'#f0e68c',
+          padding: 15,
+          borderRadius:10
+        }} onPress={handleSend}
+        >  
+          <Feather style={styles.send} name="send" size={15}/>
+        </TouchableOpacity>
       </View>
     </View>
   )
@@ -80,6 +91,7 @@ const styles = StyleSheet.create({
     alignItems:'center'
   }, 
   input:{
+    flex:1,
     padding:8,
     marginRight:5,
   }
