@@ -21,6 +21,8 @@ const styles =StyleSheet.create({
         marginVertical: 5,
         maxWidth: '80%',
         borderRadius: 15,
+        marginLeft: 10,
+        marginRight: 10,
     },
     pengguna: {
         alignSelf: 'flex-end',
@@ -32,6 +34,7 @@ const styles =StyleSheet.create({
     },
     text:{
         fontSize: 16,
+        color: '#000000'
     }
 })
 

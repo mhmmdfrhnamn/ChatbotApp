@@ -1,4 +1,4 @@
-import {  StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native'
+import {  StyleSheet, Text, TextInput, View, TouchableOpacity, FlatList } from 'react-native'
 import { Feather } from '@expo/vector-icons'
 import React, {useState,} from 'react'
 import { useCustomFonts } from '../src/fonts/fonts'
@@ -21,13 +21,31 @@ const Chat = () => {
     if (!input.trim()) return
 
     const pesanUser = {
-      id: Date.now().toString,
+      id: Date.now().toString(),
       text: input,
       user: true
     }
 
     setPesan((prev)=>[...prev, pesanUser])
     setInput('')
+
+    try{
+      const botReply = await openRouter(input)
+
+      const botMessage = {
+        id: (Date.now()+1).toString(),
+        text: botReply,
+        user:false
+      };
+      setPesan((prev)=>[...prev,botMessage])
+    } catch (error) {
+      const errorMessage = {
+        id: (Date.now()+2).toString(),
+        text: 'Gagal Medapat Jawaban',
+        user: false
+      }
+      setPesan((prev)=>[...prev,errorMessage])
+    }
   }
 
   return (
@@ -37,6 +55,14 @@ const Chat = () => {
         <Logo width={49}/>
         <Text style={styles.tittle}>Teman Ngobrol</Text>
       </View>
+
+      <FlatList
+        data={pesan}
+        keyExtractor={(item)=> item.id}
+        renderItem={({item})=>(
+          <Bubble message={item.text} user={item.user}/>
+        )}
+      />
 
       <View style={styles.inputContainer}>
         <TextInput
@@ -59,7 +85,6 @@ const Chat = () => {
   )
 }
 
-export default Chat
 
 const styles = StyleSheet.create({
   container:{
@@ -96,3 +121,5 @@ const styles = StyleSheet.create({
     marginRight:5,
   }
 })
+
+export default Chat
